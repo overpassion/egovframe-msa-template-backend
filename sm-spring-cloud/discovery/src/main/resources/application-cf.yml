@@ -1,0 +1,8 @@
+eureka:
+  instance:
+    appname: ${spring.application.name}
+    hostname:  ${vcap.application.uris[0]} # ${spring.cloud.client.hostname}
+    prefer-ip-address: true # 서비스간 통신 시 hostname 보다 ip 를 우선
+  client:
+    service-url:
+      defaultZone: https://${eureka.instance.hostname}/eureka

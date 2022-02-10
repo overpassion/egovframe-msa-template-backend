@@ -1,0 +1,24 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/eGovFramework/egovframe-msa-template-config
+          username: '{cipher}7ba3d655c6898ca049f20abcf670224b0640b07304b9eacff2fa58d2a1759e414983efb928ec40c42b4805ca9b87cd6e'
+          password: '{cipher}0526a7e793327a1d125e0583beeb5b0070cdd6000659c29fee5558b1cdb6506f162f68a88e4bffb7d98e6ba02d6b581beb64c712a01f3292fb4426a938161bab'
+          search-paths: config # repository 폴더 경로
+          default-label: main  # main branch
+          ignore-local-ssh-settings: true
+          skip-ssl-validation: true
+    bus:
+      enabled: true # webhook 활성화: /monitor 엔드포인트 호출 가능해진다
+  rabbitmq:
+    host: '{cipher}142f45c6cb8cc580578ade1f7c42d41431dc74811d388d0a060332457615a1c4'
+    port: 8081
+    username: '{cipher}39231dca217f668d15615a930157f6c3567b93647c998ab8cb52445c271bf83c'
+    password: '{cipher}862575455cd7cddc14b90323029665489a54de64152da07fc66555f156d29329'

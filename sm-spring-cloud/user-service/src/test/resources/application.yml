@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: user-service
+  profiles:
+    group:
+      default: oauth
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        #        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+        default_batch_fetch_size: 1000
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
+
+# config server actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans
